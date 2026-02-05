@@ -24,30 +24,29 @@ import React from "react";
 class Reset extends React.Component {
   constructor() {
     super();
-     count=0;
+     
     
     this.state = {
-
+       count:0
     };
   }
 
   increment = () => {
-    this.count=this.count+1;
+    this.setState({ count: this.state.count + 1 });
   };
 
   decrement = () => {
-    this.count=this.count-1;
+    this.setState({ count: this.state.count - 1 });
   };
 
   reset = () => {
-    this.count=0;
+    this.setState({ count: 0 });
   };
 
   render() {
     return (
       <>
-
-
+        <h1>{this.state.count}</h1>
         <button onClick={this.increment}>increment</button>
         <button onClick={this.decrement}>decrement</button>
         <button onClick={this.reset}>reset</button>
